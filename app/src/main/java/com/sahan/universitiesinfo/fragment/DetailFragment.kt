@@ -19,21 +19,25 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     private lateinit var viewModel: DetailFragmentViewModel
 
     override fun initUi() {
-        /**
-        activity?.onBackPressedDispatcher?.addCallback(
-            viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    val action = DetailFragmentDirections.actionDetailFragmentToFeedFragment()
-                    Navigation.findNavController(fragmentDataBinding.root).navigate(action)
-                }
-            }
-        )
 
-         */
         val args: DetailFragmentArgs by navArgs()
         viewModel = ViewModelProvider(this)[DetailFragmentViewModel::class.java]
         viewModel.showWebView(fragmentDataBinding.universityWeb,args)
+
+        activity?.onBackPressedDispatcher?.addCallback(
+            viewLifecycleOwner,
+            object  : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if(fragmentDataBinding.universityWeb.canGoBack()) {
+                        fragmentDataBinding.universityWeb.goBack()
+                    } else {
+                        val action = DetailFragmentDirections.actionDetailFragmentToFeedFragment()
+                        Navigation.findNavController(fragmentDataBinding.root).navigate(action)
+                    }
+                }
+
+            }
+        )
 
 
     }
@@ -41,6 +45,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     override fun getLayoutId(): Int {
         return R.layout.fragment_detail
     }
+
+
 
 
     companion object {

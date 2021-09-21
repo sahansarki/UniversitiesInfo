@@ -18,10 +18,13 @@ class DetailFragmentViewModel : ViewModel() {
 
         webView.settings.javaScriptEnabled = true
         webView.webViewClient = WebViewClient()
-        //webView.settings.loadWithOverviewMode = true
-        //webView.settings.useWideViewPort = true
-
+        webView.settings.loadWithOverviewMode = true
+        webView.settings.useWideViewPort = true
+        webView.canGoBack()
         webView.loadUrl(webPage)
 
+
     }
+
+
 }
