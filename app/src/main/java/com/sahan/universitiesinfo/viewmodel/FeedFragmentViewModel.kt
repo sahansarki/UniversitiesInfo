@@ -1,33 +1,30 @@
 package com.sahan.universitiesinfo.viewmodel
 
 import android.util.Log
-import android.widget.Toast
-import androidx.lifecycle.LiveData
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sahan.universitiesinfo.model.University
 import com.sahan.universitiesinfo.network.APIService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.coroutines.CoroutineContext
 
-class MainActivityViewModel : ViewModel() {
 
-    private var selectedItem: String = ""
+class FeedFragmentViewModel : ViewModel() {
+
+
     private val apiService = APIService()
 
-
-    var universities =  MutableLiveData<ArrayList<University>>()
+    private var _universities = MutableLiveData<ArrayList<University>>()
+    var universities =  _universities
 
 
 
     fun getUniversitiesByItem(spinnerItem: String) {
-        selectedItem = spinnerItem
 
-        val call = apiService.getData(selectedItem)
+
+        val call = apiService.getData(spinnerItem)
         call.enqueue(object : Callback<ArrayList<University>> {
 
             override fun onResponse(
@@ -36,7 +33,7 @@ class MainActivityViewModel : ViewModel() {
             ) {
                 if (response.isSuccessful) {
                     response.body().let {
-                        universities.value = it
+                        _universities.value = it
                     }
                 }
             }
