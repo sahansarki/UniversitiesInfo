@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="universty"
+            type="com.sahan.universitiesinfo.model.University" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/schoolName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="@{universty.name}"
+            tools:text="School's Name" />
+
+        <TextView
+            android:id="@+id/schoolCountry"
+            android:text="@{universty.country}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            tools:text="School's Country" />
+
+        <TextView
+            android:id="@+id/schoolAlphaCode"
+            android:layout_width="match_parent"
+            android:text="@{universty.alphaCode}"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            tools:text="School's Alpha Code" />
+
+        <TextView
+            android:id="@+id/schoolDomain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{universty.domains[0]}"
+            android:padding="3dp"
+            tools:text="School's Domains" />
+
+    </LinearLayout>
+</layout>

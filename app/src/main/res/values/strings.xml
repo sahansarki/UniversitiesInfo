@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UniversitiesInfo</string>
+
+    <string-array name="countries_array">
+        <item>Turkey</item>
+        <item>Poland</item>
+        <item>Greece</item>
+        <item>Israel</item>
+    </string-array>
+</resources>
