@@ -9,13 +9,14 @@ import com.sahan.universitiesinfo.databinding.AdapterSchoolItemBinding
 import com.sahan.universitiesinfo.model.University
 import com.sahan.universitiesinfo.viewholder.BasicViewHolder
 
-class RecyclerAdapter(var universityList: ArrayList<University>) : RecyclerView.Adapter<BasicViewHolder>() {
+class RecyclerAdapter(var universityList: ArrayList<University>) :
+    RecyclerView.Adapter<BasicViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasicViewHolder {
 
         val inflater = LayoutInflater.from(parent.context)
-        val binding : AdapterSchoolItemBinding = DataBindingUtil.inflate(
+        val binding: AdapterSchoolItemBinding = DataBindingUtil.inflate(
             inflater,
             R.layout.adapter_school_item,
             parent,
@@ -33,7 +34,7 @@ class RecyclerAdapter(var universityList: ArrayList<University>) : RecyclerView.
         return universityList.size
     }
 
-    fun changeUniversityList(newList : ArrayList<University>) {
+    fun changeUniversityList(newList: ArrayList<University>) {
         this.universityList.apply {
             clear()
             addAll(newList)

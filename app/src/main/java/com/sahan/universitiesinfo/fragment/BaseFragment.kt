@@ -14,10 +14,9 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
     protected val fragmentDataBinding get() = _fragmentDataBinding!!
 
     abstract fun initUi()
-    abstract fun getLayoutId() : Int
+    abstract fun getLayoutId(): Int
 
     open fun Bundle.getArgumentsToVariable() {}
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,12 +30,17 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _fragmentDataBinding = DataBindingUtil.inflate(inflater,getLayoutId(), container,false)
+        _fragmentDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
         return fragmentDataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUi()
+    }
+
+    override fun onDetach() {
+        _fragmentDataBinding = null
+        super.onDetach()
     }
 }

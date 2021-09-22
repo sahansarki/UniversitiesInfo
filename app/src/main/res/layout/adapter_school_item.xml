@@ -1,52 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="universty"
             type="com.sahan.universitiesinfo.model.University" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/layoutSchool"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardschool"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="4dp">
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/darkwhite"
+        app:cardCornerRadius="10dp"
 
-        <TextView
-            android:id="@+id/schoolName"
+        >
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            android:text="@{universty.name}"
-            tools:text="School's Name" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
 
-        <TextView
-            android:id="@+id/schoolCountry"
-            android:text="@{universty.country}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            tools:text="School's Country" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/schoolAlphaCode"
-            android:layout_width="match_parent"
-            android:text="@{universty.alphaCode}"
-            android:layout_height="wrap_content"
-            android:padding="3dp"
-            tools:text="School's Alpha Code" />
+                <TextView
+                    android:id="@+id/textViewCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@string/university_s_country" />
 
-        <TextView
-            android:id="@+id/schoolDomain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{universty.domains[0]}"
-            android:padding="3dp"
-            tools:text="School's Domains" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/schoolCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@{universty.country}"
+                    tools:text="School's Country" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@string/universty_name" />
+
+
+                <TextView
+                    android:id="@+id/schoolName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@{universty.name}"
+                    tools:text="School's Name" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@string/universty_s_country_code" />
+
+
+                <TextView
+                    android:id="@+id/schoolAlphaCode"
+                    android:layout_width="228dp"
+                    android:layout_height="27dp"
+                    android:padding="3dp"
+                    android:text="@{universty.alphaCode}"
+                    tools:text="School's Alpha Code" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewDomain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@string/universty_s_domain" />
+
+
+                <TextView
+                    android:id="@+id/schoolDomain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="@{universty.domains[0]}"
+                    tools:text="School's Domains" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
 </layout>

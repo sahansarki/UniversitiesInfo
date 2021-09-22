@@ -3,7 +3,6 @@ package com.sahan.universitiesinfo.network
 import com.sahan.universitiesinfo.model.University
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface API {

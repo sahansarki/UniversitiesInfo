@@ -9,7 +9,6 @@ class APIService {
 
     private val BASE_URL = "http://universities.hipolabs.com/"
 
-
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())

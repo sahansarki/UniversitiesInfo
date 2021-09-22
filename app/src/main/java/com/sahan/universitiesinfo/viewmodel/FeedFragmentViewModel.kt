@@ -1,7 +1,6 @@
 package com.sahan.universitiesinfo.viewmodel
 
 import android.util.Log
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sahan.universitiesinfo.model.University
@@ -17,8 +16,7 @@ class FeedFragmentViewModel : ViewModel() {
     private val apiService = APIService()
 
     private var _universities = MutableLiveData<ArrayList<University>>()
-    var universities =  _universities
-
+    var universities = _universities
 
 
     fun getUniversitiesByItem(spinnerItem: String) {
@@ -39,7 +37,7 @@ class FeedFragmentViewModel : ViewModel() {
             }
 
             override fun onFailure(call: Call<ArrayList<University>>, t: Throwable) {
-                println(Log.e("Error","The data couldnt have been fetched"))
+                println(Log.e("Error", "The data couldnt have been fetched"))
             }
 
 

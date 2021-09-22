@@ -1,6 +1,5 @@
 package com.sahan.universitiesinfo.viewholder
 
-import android.view.View
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.sahan.universitiesinfo.databinding.AdapterSchoolItemBinding
@@ -13,9 +12,10 @@ class BasicViewHolder(private val binding: AdapterSchoolItemBinding) :
     fun bind(university: University) {
         binding.universty = university
 
-        binding.layoutSchool.setOnClickListener {
+        binding.cardschool.setOnClickListener {
             val action = FeedFragmentDirections.actionFeedFragmentToDetailFragment(university.webPages[0])
             Navigation.findNavController(binding.root).navigate(action)
+
         }
 
     }
