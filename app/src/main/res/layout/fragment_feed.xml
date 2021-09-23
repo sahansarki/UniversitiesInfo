@@ -11,7 +11,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="@color/lightblue"
         tools:context=".activity.MainActivity">
 
         <Spinner
@@ -23,7 +23,6 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rc_universities"
-            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

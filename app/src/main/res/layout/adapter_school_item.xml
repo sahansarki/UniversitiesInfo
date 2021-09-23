@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:backgroundTint="@color/darkwhite"
+        android:backgroundTint="@color/gray"
         app:cardCornerRadius="10dp"
 
         >
@@ -37,7 +37,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="@string/university_s_country" />
+                    android:text="@string/university_s_country"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
 
                 <TextView
@@ -46,6 +48,8 @@
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:text="@{universty.country}"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     tools:text="School's Country" />
 
 
@@ -61,7 +65,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="@string/universty_name" />
+                    android:text="@string/universty_name"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
 
                 <TextView
@@ -70,6 +76,8 @@
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:text="@{universty.name}"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     tools:text="School's Name" />
 
 
@@ -85,7 +93,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="@string/universty_s_country_code" />
+                    android:text="@string/universty_s_country_code"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
 
                 <TextView
@@ -94,6 +104,8 @@
                     android:layout_height="27dp"
                     android:padding="3dp"
                     android:text="@{universty.alphaCode}"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     tools:text="School's Alpha Code" />
 
 
@@ -109,7 +121,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="@string/universty_s_domain" />
+                    android:text="@string/universty_s_domain"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
 
 
                 <TextView
@@ -118,6 +132,8 @@
                     android:layout_height="wrap_content"
                     android:padding="3dp"
                     android:text="@{universty.domains[0]}"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     tools:text="School's Domains" />
 
 
